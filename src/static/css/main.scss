@@ -21,12 +21,6 @@ body {
   font-weight: $basicFontWeight;
 }
 
-.main-section img{
-  width: 100%;
-  height: 100%;
-}
-
-
 p {
   color: $darkGray;
   line-height: 1.7;
@@ -37,49 +31,64 @@ p {
   grid-template-columns: 1fr;
   grid-template-areas: 'main-picture' 'main-article' 'left-picture' 'secondary-article' 'right-picture';
   position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
-img[alt='slide-picture']{
-  display:none;
+img[alt='slide-picture'] {
+  display: none;
 }
 
-img[alt='slide-picture-mobile']{
-  display:block;
+img[alt='slide-picture-mobile'],
+img[alt='menu'] {
+  display: block;
 }
 
 header {
   position: absolute;
-  display: flex;
   color: $white;
-  width: 75%;
-  margin: 7%;
-  top: 0;
+  width: 100%;
+  padding: 15% 7%;
+  z-index: 1;
 
-  ul {
-    padding-left: 20px;
-
-    li {
-      list-style: none;
-      display: inline-block;
-      font-weight: 600;
-      margin: 0 15px;
-    }
+  img:nth-child(1) {
+    float: left;
   }
 
-  .main-section {
-    grid-area: main-picture;
-    position: relative;
+  img:nth-child(2) {
+    display: block;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+  }
 
-    .slide-pictures {
-      width: 100%;
-      height: 100%;
+  nav {
+    display: none;
 
-      img {
-        width: inherit;
-        height: inherit;
+    ul {
+      padding-left: 20px;
+
+      li {
+        list-style: none;
+        display: inline-block;
+        font-weight: 600;
+        margin: 0 15px;
       }
     }
+  }
+}
 
+.main-section {
+  grid-area: main-picture;
+  position: relative;
+
+  .slide-pictures {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
   }
 
 }
@@ -91,21 +100,20 @@ header {
   align-items: center;
   position: relative;
 
-  article{
-    padding: 0 15%;
-    margin-bottom: 10%;
+  article {
+    margin: 15% 10% 18%;
 
-    h1{
-      font-size: $basicFontSize * 3.3;
+    h1 {
+      font-size: $basicFontSize * 2.3;
       font-weight: $basicFontWeight + 100;
       margin: 0.6em 0;
     }
 
-    p{
+    p {
       margin-bottom: 30px;
     }
 
-    a{
+    a {
       text-decoration: none;
       color: $black;
       text-transform: uppercase;
@@ -114,25 +122,15 @@ header {
     }
   }
 
-  .buttons{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: inherit;
-
-    button{
-      background-color: $black;
-      border: none;
-      width: 80px;
-      height: 80px;
-    }
+  .buttons {
+    display: none;
   }
 }
 
 .left-image {
   grid-area: left-picture;
 
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
@@ -144,11 +142,10 @@ header {
   justify-content: center;
   align-items: center;
 
-  article{
-    padding: 0 35px;
-    height: max-content;
+  article {
+    padding: 13% 8%;
 
-    h1{
+    h1 {
       text-transform: uppercase;
       font-size: $basicFontSize;
       letter-spacing: 5px;
@@ -159,7 +156,7 @@ header {
 .right-image {
   grid-area: right-picture;
 
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
@@ -167,55 +164,74 @@ header {
 
 @media only screen and (min-width: 1440px) {
 
-  body{
+  body {
     overflow: hidden;
   }
 
   .page {
-    width: 100%;
-    height: 100%;
-    display: grid;
     grid-template-columns: repeat(2, 1fr) 160px 30.5%;
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 'main-picture main-picture main-article main-article' 'main-picture main-picture main-article main-article' 'left-picture secondary-article secondary-article right-picture';
   }
 
-  img[alt='slide-picture']{
-    display:block;
+  img[alt='slide-picture'] {
+    display: block;
   }
 
-  img[alt='slide-picture-mobile']{
-    display:none;
+  img[alt='slide-picture-mobile'],
+  img[alt='menu'] {
+    display: none;
   }
 
   header {
-    position: absolute;
     display: flex;
     align-items: center;
-    color: $white;
     margin: 4%;
-    z-index: 1;
+    width: 50%;
+    padding: unset;
 
-    ul {
-      padding-left: 40px;
+    img:nth-child(2) {
+      margin: unset;
+      transform: unset;
+    }
 
-      li {
-        list-style: none;
-        display: inline-block;
-        font-weight: 600;
-        margin: 0 14px;
+    nav {
+      display: block;
+
+      ul {
+        padding-left: 40px;
       }
     }
   }
 
-  .main-section {
-    grid-area: main-picture;
-    position: relative;
+  .main-article {
 
-    .slide-pictures{
-      width: 100%;
-      height: 100%;
+    article {
+      margin: 0 15% 10%;
+
+      h1 {
+        font-size: $basicFontSize * 3.3;
+      }
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inherit;
+
+      button {
+        background-color: $black;
+        border: none;
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 
+  .secondary-article {
+    article {
+      padding: 0 35px;
+    }
+  }
 }
