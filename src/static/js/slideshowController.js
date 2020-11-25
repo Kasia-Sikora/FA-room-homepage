@@ -1,13 +1,13 @@
-export let slideshowController = {
+import {domElements} from "./domElements.js";
 
-    slides: document.querySelectorAll('.slide-pictures'),
+export const slideshowController = {
 
     moveSlides: function (numberOfSlide = 0, direction) {
         let nextSlide = numberOfSlide + direction;
         let number = this.getNumberOfSlide(nextSlide);
 
-        for (let i = 0; i < this.slides.length; i++) {
-            i === number ? this.slides[i].style.display = 'block' : this.slides[i].style.display = 'none'
+        for (let i = 0; i < domElements.slides.length; i++) {
+            i === number ? domElements.slides[i].style.display = 'block' : domElements.slides[i].style.display = 'none'
         }
     },
 

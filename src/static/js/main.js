@@ -1,7 +1,9 @@
-import {buttonController} from "./buttonController.js";
+import {nextPrevButtonsController} from "./nextPrevButtonsController.js";
+import {mobileMenuController} from "./mobileMenuController.js";
 
 function onLoad() {
-    buttonController.init();
+    nextPrevButtonsController.init();
+    mobileMenuController.addListenerOnMenuButton();
 }
 
 onLoad();
