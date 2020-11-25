@@ -423,13 +423,17 @@ nav ul li {
   grid-area: main-picture;
   position: relative;
 }
-.main-section .slide-pictures {
+.main-section .slideshow-container {
   width: 100%;
   height: 100%;
 }
-.main-section .slide-pictures img {
-  width: inherit;
-  height: inherit;
+.main-section .slideshow-container .slide-pictures {
+  width: 100%;
+  height: 100%;
+}
+.main-section .slideshow-container img {
+  width: 100%;
+  height: 100%;
 }
 .main-section .buttons {
   position: absolute;
@@ -471,6 +475,21 @@ nav ul li {
   text-transform: uppercase;
   letter-spacing: 12px;
   margin-right: 20px;
+}
+.main-article .buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inherit;
+}
+.main-article .buttons button {
+  background-color: black;
+  border: none;
+  width: 60px;
+  height: 60px;
+}
+.main-article .buttons button img {
+  margin: 0 auto;
 }
 
 .left-image {
@@ -550,19 +569,12 @@ nav ul li {
   }
 
   .main-article .buttons {
-    position: absolute;
-    bottom: 0;
     left: 0;
     display: inherit;
   }
   .main-article .buttons button {
-    background-color: black;
-    border: none;
     width: 80px;
-    height: 80px;
-  }
-  .main-article .buttons button img {
-    margin: 0 auto;
+    height: 60px;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -595,28 +607,13 @@ nav ul li {
     padding-left: 40px;
   }
 
-  .main-section img:nth-child(1) {
-    display: block;
-  }
-  .main-section img:nth-child(2) {
-    display: none;
-  }
-
   .main-article article {
     margin: 0 15% 10%;
   }
   .main-article article h1 {
     font-size: 39.6px;
   }
-  .main-article .buttons {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: inherit;
-  }
   .main-article .buttons button {
-    background-color: black;
-    border: none;
     width: 80px;
     height: 80px;
   }

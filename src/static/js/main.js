@@ -1,24 +1,8 @@
-const tablet = window.matchMedia('((min-width: 992px');
+import {buttonController} from "./buttonController.js";
 
-let mainSection = document.querySelector('.main-section');
-
-let mainArticle = document.querySelector('.main-article');
-
-let buttons = document.getElementsByClassName('buttons')[0];
-
-function handleTabletDevice(tablet){
-    if(tablet.matches){
-        mainSection.removeChild(buttons);
-        mainArticle.appendChild(buttons);
-    }else{
-        mainSection.appendChild(buttons);
-        mainArticle.removeChild(buttons);
-    }
+function onLoad() {
+    buttonController.init();
 }
 
-
-tablet.addEventListener('change', handleTabletDevice);
-
-
-handleTabletDevice(tablet);
+onLoad();
 
