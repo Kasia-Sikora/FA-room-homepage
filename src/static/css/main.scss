@@ -229,7 +229,6 @@ nav {
     display: flex;
     align-items: center;
     padding: 10%;
-    width: 100%;
 
     img:nth-child(1) {
       display: none;
@@ -270,8 +269,6 @@ nav {
   }
 
   nav {
-    display: flex;
-    align-items: center;
     margin: 5%;
     width: 50%;
     padding: unset;
@@ -293,23 +290,11 @@ nav {
 
 @media only screen and (min-width: 1440px) {
 
-  body {
-    overflow: hidden;
-  }
-
-  .page {
-    grid-template-columns: repeat(2, 1fr) 160px 30.5%;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 'main-picture main-picture main-article main-article' 'main-picture main-picture main-article main-article' 'left-picture secondary-article secondary-article right-picture';
-  }
-
 
   nav {
     display: flex;
     align-items: center;
     margin: 4%;
-    width: 50%;
-    padding: unset;
 
     img:nth-child(1) {
       display: none;
@@ -339,7 +324,6 @@ nav {
     .buttons {
 
       button {
-        width: 80px;
         height: 80px;
       }
     }
