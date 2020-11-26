@@ -18,11 +18,13 @@ export const nextPrevButtonsController = {
     },
 
     addNextPrevButtonsListener: function (buttons) {
+        const left = -1;
+        const right = 1;
         buttons.firstElementChild.addEventListener('click', () => {
-            slideshowController.moveSlides(this.getActiveSlide(), -1);
+            slideshowController.moveSlides(this.getActiveSlide(), left);
         })
         buttons.lastElementChild.addEventListener('click', () => {
-            slideshowController.moveSlides(this.getActiveSlide(), 1);
+            slideshowController.moveSlides(this.getActiveSlide(), right);
         })
     },
 
@@ -34,17 +36,21 @@ export const nextPrevButtonsController = {
         }
     },
 
-    setDisplayOfSlidePictures: function (slidePictures) {
-        slidePictures[0].style.display = 'block';
-        slidePictures[1].style.display = 'none';
-        slidePictures[2].style.display = 'none';
+    setDisplayOfSlidePictures: function (slidePictures, slideArticles) {
+        for(let i = 0; i < slidePictures.length; i++){
+            if(i === 0){
+                slidePictures[i].style.display = 'block';
+                slideArticles[i].style.display = 'block';
+            }else{
+                slidePictures[i].style.display = 'none';
+                slideArticles[i].style.display = 'none';
+            }
+        }
     },
 
 
-
     init: function () {
-
-        this.setDisplayOfSlidePictures(domElements.slidePictures);
+        this.setDisplayOfSlidePictures(domElements.slidePictures, domElements.slideArticles);
         domElements.tablet = window.matchMedia('((min-width: 992px');
         this.handleTabletDevice(domElements.tablet);
         domElements.tablet.addEventListener('change', this.handleTabletDevice);

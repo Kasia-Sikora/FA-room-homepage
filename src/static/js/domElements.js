@@ -14,5 +14,5 @@ export const domElements = {
 
     close: document.getElementById('close-menu'),
 
-    slides: document.querySelectorAll('.slide-pictures'),
+    slideArticles: document.querySelectorAll('.slide-articles'),
 }

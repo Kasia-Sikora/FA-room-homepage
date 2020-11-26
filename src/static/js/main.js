@@ -3,7 +3,7 @@ import {mobileMenuController} from "./mobileMenuController.js";
 
 function onLoad() {
     nextPrevButtonsController.init();
-    mobileMenuController.addListenerOnMenuButton();
+    mobileMenuController.init();
 }
 
 onLoad();
