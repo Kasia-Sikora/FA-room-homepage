@@ -3,7 +3,7 @@
 
 My Solution:
 
-<img src="https://raw.githubusercontent.com/Kasia-Sikora/FA-room-homepage/main/src/static/images/Screenshot.png?token=AMREBIHQXC6J77AZLHE6OEK72O634" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/Kasia-Sikora/FA-room-homepage/main/src/static/images/Screenshot.png" width="50%" height="50%">
 
 Original:
 
