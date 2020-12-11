@@ -1,5 +1,12 @@
 # Frontend Mentor - Room homepage
 
+
+My Solution:
+
+<img src="https://raw.githubusercontent.com/Kasia-Sikora/FA-room-homepage/main/src/static/images/Screenshot.png?token=AMREBIAJQZNS67I2KW2QVNK72O6EM" width="50%" height="50%">
+
+Original:
+
 ![Design preview for the Room homepage coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
